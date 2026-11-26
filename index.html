@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook Clone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>" />
+</head>
+<body>
+
+  <div id="authScreen" class="auth-screen">
+    <div class="auth-container">
+ 
+      <div class="auth-brand">
+        <h1 class="brand-logo">facebook</h1>
+        <p class="brand-tagline">Connect with friends and the world around you on Facebook.</p>
+      </div>
+
+      <div class="auth-form-wrapper">
+
+        <form id="loginForm" class="auth-form" novalidate>
+          <input type="email" id="loginEmail" class="auth-input" placeholder="Email address" autocomplete="email" />
+          <input type="password" id="loginPassword" class="auth-input" placeholder="Password" autocomplete="current-password" />
+          <button type="submit" class="btn-primary btn-login">Log In</button>
+          <a href="#" class="forgot-link">Forgotten password?</a>
+          <div class="divider"></div>
+          <button type="button" id="showRegisterBtn" class="btn-success">Create New Account</button>
+        </form>
+
+
+        <form id="registerForm" class="auth-form hidden" novalidate>
+          <h2 class="register-title">Create a new account</h2>
+          <p class="register-subtitle">It's quick and easy.</p>
+          <hr class="register-hr" />
+          <input type="text" id="regName" class="auth-input" placeholder="Full Name" autocomplete="name" />
+          <input type="email" id="regEmail" class="auth-input" placeholder="Email address" autocomplete="email" />
+          <input type="password" id="regPassword" class="auth-input" placeholder="New password" autocomplete="new-password" />
+          <input type="password" id="regConfirm" class="auth-input" placeholder="Confirm password" autocomplete="new-password" />
+          <div class="reg-actions">
+            <button type="button" id="backToLoginBtn" class="btn-secondary">Back to Login</button>
+            <button type="submit" class="btn-success">Sign Up</button>
+          </div>
+        </form>
+
+        <p class="auth-footer">Create a Page for a celebrity, brand or business.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="mainApp" class="main-app hidden">
+
+
+    <header class="navbar">
+      <div class="navbar-left">
+        <a href="#" class="nav-logo">facebook</a>
+        <div class="nav-search">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="#65676b"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="searchInput" placeholder="Search Facebook" />
+        </div>
+      </div>
+
+      <div class="navbar-center">
+        <button class="nav-icon active" title="Home">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#1877f2"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        </button>
+        <button class="nav-icon" title="Friends">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#65676b"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </button>
+        <button class="nav-icon" title="Watch">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#65676b"><path d="M21 6h-7.59l3.29-3.29L16 2l-4 4-4-4-.71.71L10.59 6H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"/></svg>
+        </button>
+        <button class="nav-icon" title="Groups">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#65676b"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+        </button>
+      </div>
+
+      <div class="navbar-right">
+        <button class="nav-icon-circle" title="Menu">☰</button>
+        <button class="nav-icon-circle" title="Messenger">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="#050505"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.14.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.99-.88c.17-.07.36-.09.53-.04 1.05.29 2.17.44 3.32.44 5.64 0 10-4.13 10-9.7S17.64 2 12 2z"/></svg>
+        </button>
+        <div class="avatar-nav" id="navAvatar" title="Your Profile"></div>
+      </div>
+    </header>
+
+    <div class="layout">
+
+      <aside class="sidebar-left">
+        <div class="sidebar-profile" id="sidebarProfile">
+          <div class="avatar-lg" id="sidebarAvatar"></div>
+          <span id="sidebarName">User</span>
+        </div>
+        <a class="sidebar-link">👥 Friends</a>
+        <a class="sidebar-link">📺 Watch</a>
+        <a class="sidebar-link">🛒 Marketplace</a>
+        <a class="sidebar-link">🎮 Gaming</a>
+        <hr class="sidebar-hr" />
+        <a class="sidebar-link">📌 Saved</a>
+        <a class="sidebar-link">📅 Events</a>
+        <a class="sidebar-link">📈 Ads Manager</a>
+        <a class="sidebar-link">⚙️ Settings</a>
+        <button id="logoutBtn" class="logout-btn">🚪 Log Out</button>
+      </aside>
+
+      <main class="feed">
+
+        <div class="create-post-card">
+          <div class="create-post-top">
+            <div class="avatar-md" id="composerAvatar"></div>
+            <button id="openComposerBtn" class="composer-input">What's on your mind?</button>
+          </div>
+          <hr class="composer-hr" />
+          <div class="composer-actions">
+            <button class="composer-action" id="photoAction">📷 Photo</button>
+            <button class="composer-action" id="videoAction">🎥 Video</button>
+            <button class="composer-action" id="feelingAction">😊 Feeling</button>
+          </div>
+        </div>
+
+
+        <div id="feedContainer"></div>
+        <div id="emptyFeed" class="empty-feed hidden">
+          <p>No posts yet. Be the first to share something!</p>
+        </div>
+      </main>
+
+      <aside class="sidebar-right">
+        <h3 class="right-heading">Sponsored</h3>
+        <div class="sponsored-item">
+          <div class="sponsored-img">📱</div>
+          <div>
+            <strong>Tech Store</strong>
+            <p>Latest gadgets at best prices</p>
+          </div>
+        </div>
+        <div class="sponsored-item">
+          <div class="sponsored-img">🎧</div>
+          <div>
+            <strong>Music Pro</strong>
+            <p>Premium headphones</p>
+          </div>
+        </div>
+        <hr class="sidebar-hr" />
+        <h3 class="right-heading">Contacts</h3>
+        <div class="contact-item"><span class="online-dot"></span> Alex Johnson</div>
+        <div class="contact-item"><span class="online-dot"></span> Maria Garcia</div>
+        <div class="contact-item"><span class="online-dot"></span> David Kim</div>
+        <div class="contact-item"><span class="online-dot offline"></span> Sarah Lee</div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="composerModal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Create Post</h2>
+        <button id="closeComposerBtn" class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="composer-user">
+          <div class="avatar-md" id="modalAvatar"></div>
+          <strong id="modalUserName">User</strong>
+        </div>
+        <textarea id="postText" class="post-textarea" placeholder="What's on your mind?" rows="5"></textarea>
+        <div class="image-preview hidden" id="imagePreview">
+          <img id="previewImg" alt="Preview" />
+          <button type="button" id="removeImageBtn" class="remove-img">✕</button>
+        </div>
+        <label class="image-upload-label">
+          📷 Add Photo
+          <input type="file" id="imageInput" accept="image/*" hidden />
+        </label>
+      </div>
+      <div class="modal-footer">
+        <button id="publishPostBtn" class="btn-primary btn-publish">Post</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
